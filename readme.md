@@ -45,4 +45,4 @@ Usage:
     console.log(trellis.getLED(15)); //return the last led state (0)
 ```
 
-[Github sources](https://github.com/lePioo/NodeRotaryEncoder_Raspberry)
+[Github sources](https://github.com/lePioo/NodeTrellis_Raspberry)
