@@ -1,13 +1,14 @@
 class NodeTrellis extends require('events') {
   constructor(i2cAddress = 0x70, i2cBus = 1) {
     super();
+    this._firstSendDebug=false;
     this._leds = [
       0, 0, 0, 0,
       0, 0, 0, 0,
       0, 0, 0, 0,
       0, 0, 0, 0
     ];
-    this._lastLedString = "";
+    this._lastLedString = this._leds.join("");
     this._py = require('child_process').spawn('python', ['NodeTrellis.py', i2cAddress.toString(16), i2cBus.toString()]);
     this._py.stdout.on('data', (dataBuffer) => {
       var datar = dataBuffer.toString().split(",");

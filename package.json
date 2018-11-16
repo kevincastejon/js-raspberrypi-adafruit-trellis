@@ -1,19 +1,17 @@
 {
-    "name": "lepioo.tm1637",
-    "version": "1.0.13",
-    "description": "Control LCD tm1637 display from a raspberry pi",
-    "main": "TM1637.js",
+    "name": "lepioo.nodetrellis",
+    "version": "1.0.1",
+    "description": "Control and monitor leds and switches of Adafruit Trellis from a raspberry pi with nodeJS",
+    "main": "NodeTrellis.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
-    "tm1637",
+    "adafruit",
+    "trellis",
     "raspberry",
     "pi"
   ],
-    "dependencies": {
-        "node-wiring-pi": "~0.0.4"
-    },
     "author": "lepioo",
     "license": "ISC"
 }
