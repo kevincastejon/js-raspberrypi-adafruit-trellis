@@ -20,9 +20,6 @@ while True:
                 trellis.setLED(x)
             # tell the trellis to set the LEDs we requested
             trellis.writeDisplay()
-        # elif c[1]=="2":
-        #     sys.stdout.write(str(trellis.isLED(int(c[0],16))))
-        #     sys.stdout.flush()
     else:
         if trellis.readSwitches():
             # go through every button
@@ -36,20 +33,3 @@ while True:
                     sys.stdout.flush()
             # tell the trellis to set the LEDs we requested
             trellis.writeDisplay()
-    # c =  sys.stdin.read(1)
-    # if(c!="\n"):
-    #     sys.stdout.write("prout")
-    #     sys.stdout.flush()
-    # If a button was just pressed or released...
-    # if trellis.readSwitches():
-    #     # go through every button
-    #     for i in range(numKeys):
-    #         # if it was pressed...
-    #         if trellis.justPressed(i):
-    #             sys.stdout.write("pressed,"+str(i))
-    #             sys.stdout.flush()
-    #         if trellis.justReleased(i):
-    #             sys.stdout.write("released,"+str(i))
-    #             sys.stdout.flush()
-    #     # tell the trellis to set the LEDs we requested
-    #     trellis.writeDisplay()

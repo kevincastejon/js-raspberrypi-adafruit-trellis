@@ -15,11 +15,12 @@ You need the following libraries installed on your raspberry pi.
     sudo python setup.py install
 ```
 
-[Adafruit_Trellis_Python](https://github.com/lePioo/Adafruit_Trellis_Python)
+(an updated version of the discontinued Adafruit_Trellis_Python library)
+[python-raspberrypi-adafruit-trellis](https://github.com/lepioo/python-raspberrypi-adafruit-trellis)
 ```
     sudo apt-get update
-    git clone https://github.com/lePioo/Adafruit_Trellis_Python.git
-    cd Adafruit_Trellis_Python
+    git clone https://github.com/lepioo/python-raspberrypi-adafruit-trellis.git
+    cd python-raspberrypi-adafruit-trellis
     sudo python setup.py install
 ```
 
