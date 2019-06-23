@@ -1,5 +1,5 @@
 {
-    "name": "lepioo.nodetrellis",
+    "name": "js-raspberrypi-adafruit-trellis",
     "version": "1.0.1",
     "description": "Control and monitor leds and switches of Adafruit Trellis from a raspberry pi with nodeJS",
     "main": "NodeTrellis.js",
@@ -12,6 +12,6 @@
     "raspberry",
     "pi"
   ],
-    "author": "lepioo",
+    "author": "kevincastejon",
     "license": "ISC"
 }
