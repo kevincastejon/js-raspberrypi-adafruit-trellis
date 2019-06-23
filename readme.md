@@ -1,4 +1,4 @@
-# lepioo.nodetrellis
+# js-raspberrypi-adafruit-trellis
 
 ## Control and monitor leds and switches of Adafruit Trellis from a raspberry pi with nodeJS
 
@@ -16,17 +16,17 @@ You need the following libraries installed on your raspberry pi.
 ```
 
 (an updated version of the discontinued Adafruit_Trellis_Python library)
-[python-raspberrypi-adafruit-trellis](https://github.com/lepioo/python-raspberrypi-adafruit-trellis)
+[python-raspberrypi-adafruit-trellis](https://github.com/kevincastejon/python-raspberrypi-adafruit-trellis.git)
 ```
     sudo apt-get update
-    git clone https://github.com/lepioo/python-raspberrypi-adafruit-trellis.git
+    git clone https://github.com/kevincastejon/python-raspberrypi-adafruit-trellis.git
     cd python-raspberrypi-adafruit-trellis
     sudo python setup.py install
 ```
 
 Then install this module that way:
 ```
-    npm install lepioo.nodetrellis
+    npm install raspberrypi-adafruit-trellis
 ```
 
 Usage:
