@@ -2,7 +2,7 @@ const path = require('path');
 const Trellis = require(path.resolve(__dirname, 'Trellis'));
 const trellisAddress = 0x70;
 const trellisBus = 1;
-var trellis = new Trellis(trellisAddress,trellisBus); //Default address:0x70 , default bus:1
+const trellis = new Trellis(trellisAddress,trellisBus); //Default address:0x70 , default bus:1
 trellis.on("pressed", (buttonID) => {
   console.log("Key "+buttonID+" is pressed");
   if (trellis.getLED(buttonID)){
