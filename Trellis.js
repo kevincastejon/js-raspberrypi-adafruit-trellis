@@ -1,4 +1,6 @@
-class NodeTrellis extends require('events') {
+const path = require('path');
+
+class Trellis extends require('events') {
   constructor(i2cAddress = 0x70, i2cBus = 1) {
     super();
     this._firstSendDebug=false;
@@ -9,7 +11,10 @@ class NodeTrellis extends require('events') {
       0, 0, 0, 0
     ];
     this._lastLedString = this._leds.join("");
-    this._py = require('child_process').spawn('python', ['NodeTrellis.py', i2cAddress.toString(16), i2cBus.toString()]);
+    this._py = require('child_process').spawn('python', [path.resolve(__dirname ,'Trellis.py'), i2cAddress.toString(16), i2cBus.toString()]);
+    this._py.stderr.on('data', (data) => {
+      console.log(`stderr: ${data}`);
+    });
     this._py.stdout.on('data', (dataBuffer) => {
       var datar = dataBuffer.toString().split(",");
       for (var i = 0; i < datar.length; i++) {
@@ -33,9 +38,6 @@ class NodeTrellis extends require('events') {
         this._lastLedString = ledstring;
       }
     },16);
-    // this._py.stdout.on('end', ()=> {
-    //   console.log('end');
-    // });
   }
   setLED(led, value) {
     if (value != 0 && value != 1) throw new Error("value must be 0 or 1")
@@ -51,4 +53,4 @@ class NodeTrellis extends require('events') {
     this._py.kill('SIGINT');
   }
 }
-module.exports=NodeTrellis;
+module.exports=Trellis;

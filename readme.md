@@ -31,19 +31,21 @@ Then install this module that way:
 
 Usage:
 ```
-    const NodeTrellis = require("./NodeTrellis.js");
-    var trellis = new NodeTrellis(trellisAddress,trellisBus); //Default address:0x70 , default bus:1
-    trellis.on("pressed", (button) => {
-      console.log("Key "+button+" is pressed");
+    const Trellis = require('raspberrypi-adafruit-trellis');
+    const trellisAddress = 0x70;
+    const trellisBus = 1;
+    var trellis = new Trellis(trellisAddress,trellisBus); //Default address:0x70 , default bus:1
+    trellis.on("pressed", (buttonID) => {
+      console.log("Key "+buttonID+" is pressed");
+      if (trellis.getLED(buttonID)){
+        trellis.setLED(buttonID, 0);
+      } else {
+        trellis.setLED(buttonID, 1);
+      }
     });
-    trellis.on("released", (button) => {
-      console.log("Key "+button+" is released");
+    trellis.on("released", (buttonID) => {
+      console.log("Key "+buttonID+" is released");
     });
-    trellis.setLED(0, 1);   //turn on first led
-    trellis.setLED(15, 0);  //turn off last led
-
-    console.log(trellis.getLED(0)); //return the first led state (1)
-    console.log(trellis.getLED(15)); //return the last led state (0)
 ```
 
-[Github sources](https://github.com/lePioo/NodeTrellis_Raspberry)
+[Github sources](https://github.com/kevincastejon/js-raspberrypi-adafruit-trellis)
