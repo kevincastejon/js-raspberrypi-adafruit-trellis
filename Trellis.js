@@ -48,7 +48,15 @@ class Trellis extends require('events') {
     if (led < 0 || led > 15) throw new Error("led value is minimum 0 and maximum 15")
       return (this._leds[led]);
   }
-  destructor(){
+  setBrightness(value) {
+    if (value<0) {
+      value=0;
+    } else if (value>15) {
+      value=15;
+    }
+    this._py.stdin.write('BRIGHTNESSLEVEL'+value.toString(16));
+  }
+  destructor() {
     clearInterval(this._timer);
     this._py.kill('SIGINT');
   }

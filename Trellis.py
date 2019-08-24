@@ -13,13 +13,16 @@ while True:
     time.sleep(0.03)
     if select.select([sys.stdin,],[],[],0.0)[0]:
         c =  sys.stdin.read(16)
-        for x in range(0, 16):
-            if c[x]=="0":
-                trellis.clrLED(x)
-            elif c[x]=="1":
-                trellis.setLED(x)
-            # tell the trellis to set the LEDs we requested
-            trellis.writeDisplay()
+        if c[0]=="B":
+            trellis.setBrightness(int(c[15], 16))
+        else:
+            for x in range(0, 16):
+                if c[x]=="0":
+                    trellis.clrLED(x)
+                elif c[x]=="1":
+                    trellis.setLED(x)
+                # tell the trellis to set the LEDs we requested
+                trellis.writeDisplay()
     else:
         if trellis.readSwitches():
             # go through every button
