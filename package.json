@@ -1,6 +1,6 @@
 {
     "name": "raspberrypi-adafruit-trellis",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "Control and monitor leds and switches of Adafruit Trellis from a raspberry pi with nodeJS",
     "main": "Trellis.js",
     "scripts": {
